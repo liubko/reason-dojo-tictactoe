@@ -1,13 +1,11 @@
-# TicTacToe
-
-## ReasonDojo (Lviv, UA)
+# TicTacToe _[ReasonDojo (Lviv, UA)](https://t.me/joinchat/GrDgEwvl4sI0adTX_yaD-A)_
 
 ## Setup
 
 Clone this project and install all deps
 
 ```
-git clone ...
+git clone git@github.com:liubko/reason-dojo-tictactoe.git
 npm install
 ```
 
