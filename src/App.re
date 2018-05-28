@@ -1,12 +1,44 @@
 [%bs.raw {|require('./App.css')|}];
 
-let component = ReasonReact.statelessComponent("App");
+open Core;
+
+type state = {
+  board,
+  gameState,
+};
+
+type action =
+  | Mark(int);
+
+let component = ReasonReact.reducerComponent("App");
 
 let make = _children => {
   ...component,
-  render: _self =>
+  initialState: () => {
+    gameState: Play(Cross),
+    board: [None, None, None, None, None, None, None, None, None],
+  },
+  reducer: (action, state) =>
+    switch (action) {
+    | Mark(index) =>
+      Js.log2("Mark", index);
+      switch (state.gameState) {
+      | Play(player) =>
+        ReasonReact.Update({
+          gameState: Play(player === Cross ? Circle : Cross),
+          board:
+            state.board
+            |> List.mapi((i, field) => i === index ? Some(player) : field),
+        })
+      | _ => ReasonReact.NoUpdate
+      };
+    },
+  render: self =>
     <div className="App">
-      <h1> (ReasonReact.string("Tic-tac-toe")) </h1>
-      <p> (ReasonReact.string("One day here will be your game :)")) </p>
+      <h1> (ReasonReact.string("TicTacToe")) </h1>
+      <Board
+        data=self.state.board
+        onClick=(index => self.send(Mark(index)))
+      />
     </div>,
 };
