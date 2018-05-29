@@ -1,0 +1,12 @@
+.Field {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100px;
+  height: 100px;
+
+  cursor: pointer;
+
+  border: 1px solid grey;
+}
