@@ -36,7 +36,7 @@ type board = ...;
 type gameState = ...;
 ```
 
-Hashtags: `#variant` `#option`
+> [#variant](https://reasonml.github.io/docs/en/variant.html#docsNav), [#option](https://reasonml.github.io/docs/en/variant.html#option)
 
 ### Create a static UI to display a board
 
@@ -55,21 +55,21 @@ Create a waterfall of components:
 |---- <Field />
 ```
 
-Hashtags: `#statelessComponent`, `#modules`, `#bs.raw`
+> [#statelessComponent](https://reasonml.github.io/reason-react/docs/en/creation-props-self.html), [#bs.raw](https://bucklescript.github.io/docs/en/embed-raw-javascript.html)
 
 ### Add interactivity
 
 Add onClick handler to `<Filed />`, handle game logic.
 
-Hashtags: `#reducerComponent`
+> [#reducerComponent](https://reasonml.github.io/reason-react/docs/en/state-actions-reducer.html)
 
 ### Connect with API
 
-Install `bs-fetch` and `bs-json`. Make API request and decode responses.
+Install [bs-fetch](https://github.com/reasonml-community/bs-fetch) and [bs-json](https://github.com/glennsl/bs-json). Make API request and decode responses.
 
 API: https://market.mashape.com/stujo/tic-tac-toe
 
-Hashtags: `#bs-fetch`, `#bs-json`
+> [#bs-fetch](https://github.com/reasonml-community/bs-fetch), [#bs-json](https://github.com/glennsl/bs-json)
 
 ### Polishing, improvements
 
