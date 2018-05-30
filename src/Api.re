@@ -1,16 +1,18 @@
-/* let requestConfig =
-     Fetch.RequestInit.make(
-       ~headers=
-         Fetch.HeadersInit.make({
-           "X-Mashape-Key": "generate an API key",
-           "Accept": "application/json",
-         }),
-       (),
-     );
+let requestConfig =
+  Fetch.RequestInit.make(
+    ~headers=
+      Fetch.HeadersInit.make({
+        "X-Mashape-Key": "", /* generate an API key */
+        "Accept": "application/json",
+      }),
+    (),
+  );
 
-   let decodeResponse = _json => "implement decoder";
+/* implement decoder */
+let decodeResponse = _json => ();
 
-   let fetchTicTacToe = _board => {
-     let url = "prepare a url, based on a board and current player";
-     Fetch.fetchWithInit(url, requestConfig);
-   }; */
+let fetchTicTacToe = _board => {
+  /* prepare a url, based on a board and current player */
+  let url = "http://";
+  Fetch.fetchWithInit(url, requestConfig);
+};

@@ -21,7 +21,6 @@ let make = _children => {
   reducer: (action, state) =>
     switch (action) {
     | Mark(index) =>
-      Js.log2("Mark", index);
       switch (state.gameState) {
       | Play(player) =>
         ReasonReact.Update({
@@ -31,7 +30,7 @@ let make = _children => {
             |> List.mapi((i, field) => i === index ? Some(player) : field),
         })
       | _ => ReasonReact.NoUpdate
-      };
+      }
     },
   render: self =>
     <div className="App">
@@ -42,3 +41,4 @@ let make = _children => {
       />
     </div>,
 };
+Api.fetchTicTacToe();
